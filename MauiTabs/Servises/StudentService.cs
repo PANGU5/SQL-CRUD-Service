@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace MauiTabs.Servises
 {
-    public class StudentService : IDatabaseService
+    public class DatabaseService: IDatabaseService
     {
         private SQLiteAsyncConnection[] _dbConnection = new SQLiteAsyncConnection[2]{ 
             new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Student.db3")),
             new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Subject.db3"))
         };
-        public StudentService()
+        public DatabaseService()
         {
             //SetUpDb(Databases.Student);
             //SetUpDb(Databases.Subject);
@@ -49,7 +49,6 @@ namespace MauiTabs.Servises
             if (data == Databases.Subject) await _dbConnection[1].CreateTableAsync<SubjectModel>();
         }
         */
-
 
         public Task<int> Delete(string data, object itemModel)
         {

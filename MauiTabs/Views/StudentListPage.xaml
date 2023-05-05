@@ -8,7 +8,6 @@
              Title="Student List">
     <StackLayout Margin="10">
         <Label Text="Student List" FontSize="28"/>
-        <Button Text="Add Student" Command="{Binding AddUpdateStudentCommand}" HorizontalOptions="EndAndExpand"/>
 
         <CollectionView ItemsSource="{Binding Students}">
             <CollectionView.ItemTemplate>

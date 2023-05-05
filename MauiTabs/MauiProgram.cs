@@ -23,7 +23,7 @@ public static class MauiProgram
 #endif
 
 		//Services
-		builder.Services.AddSingleton<IDatabaseService, StudentService>();
+		builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
 
 		//Views Registration
 		builder.Services.AddSingleton<StudentListPage>();
