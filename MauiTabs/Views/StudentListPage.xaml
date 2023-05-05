@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MauiTabs.Models"
+             xmlns:viewModels="clr-namespace:MauiTabs.ViewModels"
+             x:DataType="viewModels:StudentListPageViewModel"
+             x:Class="MauiTabs.Views.StudentListPage"
+             Title="Student List">
+    <StackLayout Margin="10">
+        <Label Text="Student List" FontSize="28"/>
+        <Button Text="Add Student" Command="{Binding AddUpdateStudentCommand}" HorizontalOptions="EndAndExpand"/>
+
+        <CollectionView ItemsSource="{Binding Students}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:StudentModel">
+                    <Frame>
+                        <StackLayout Margin="10">
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="ID:"/>
+                                <Label Text="{Binding StudentId}"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="15">
+                                <Label Text="{Binding FirstName}" FontSize="18" FontAttributes="Bold"/>
+                                <Label Text="{Binding LastName}" FontSize="18" FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding Age}"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentListPageViewModel}},Path=DisplayActionCommand}" 
+                                                  CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

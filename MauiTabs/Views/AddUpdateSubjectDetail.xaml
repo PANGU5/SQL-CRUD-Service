@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTabs.Views.AddUpdateSubjectDetail"
+             Title="AddUpdateSubjectDetail">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="SlateGray"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="10">
+        <VerticalStackLayout>
+            <Label Text="ID"/>
+            <Entry Text="{Binding SubjectDetail.SubjectId}" Placeholder="ID"/>
+            <BoxView HeightRequest="0.8" Color="Gray"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="First Name"/>
+            <Entry Text="{Binding SubjectDetail.SubjectName}" Placeholder="First Name"/>
+            <BoxView HeightRequest="0.8" Color="Gray"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Last Name"/>
+            <Entry Text="{Binding SubjectDetail.Time}" Placeholder="Last Name"/>
+            <BoxView HeightRequest="0.8" Color="Gray"/>
+        </VerticalStackLayout>
+
+        <Button Text="Save" Command="{Binding WriteSubjectCommand}"/>
+    </StackLayout>
+</ContentPage>

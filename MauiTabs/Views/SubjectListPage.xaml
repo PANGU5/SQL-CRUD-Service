@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MauiTabs.Models"
+             xmlns:viewModels="clr-namespace:MauiTabs.ViewModels"
+             x:DataType="viewModels:SubjectListPageViewModel"
+             x:Class="MauiTabs.Views.SubjectListPage"
+             Title="SubjectListPage">
+    <StackLayout Margin="10">
+        <Label Text="Subject List" FontSize="28"/>
+
+        <CollectionView ItemsSource="{Binding Subject}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:SubjectModel">
+                    <Frame>
+                        <StackLayout Margin="10">
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="ID:"/>
+                                <Label Text="{Binding SubjectId}"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="15">
+                                <Label Text="{Binding SubjectName}" FontSize="18" FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding Time}"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:SubjectListPageViewModel}},Path=DisplayActionCommand}" 
+                                                  CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
