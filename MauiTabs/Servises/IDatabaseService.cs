@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace MauiTabs.Servises
 {
     public interface IDatabaseService
-
     {
         Task<List<StudentModel>> GetStudentList();
         Task<List<SubjectModel>> GetSubjectList();

@@ -23,7 +23,7 @@ namespace MauiTabs.Servises
             _dbConnection[1].CreateTableAsync<SubjectModel>();
         }
 
-        private int GetDatabase(string data)
+        private int GetDatabase2(string data) 
         {
             switch (data)
             {
@@ -33,8 +33,15 @@ namespace MauiTabs.Servises
                     return 1;
                 default: return -1;
             }
-            
         }
+
+        private int GetDatabase(string data) =>
+            (data) switch
+            {
+                ("Student") => 0,
+                ("Subject") => 1,
+                (_) => -1
+            };
 
         /*
         private async void SetUpDb(string data)
@@ -68,7 +75,6 @@ namespace MauiTabs.Servises
         public async Task<bool> Check(string data, int itemId)
         {
             int count = await _dbConnection[GetDatabase(data)].ExecuteScalarAsync<int>($"SELECT count(*) FROM {data}Model WHERE {data}Id = {itemId}");
-
             return count > 0;
         }
 

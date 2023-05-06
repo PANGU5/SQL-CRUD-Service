@@ -20,14 +20,14 @@
         </VerticalStackLayout>
 
         <VerticalStackLayout>
-            <Label Text="First Name"/>
-            <Entry Text="{Binding SubjectDetail.SubjectName}" Placeholder="First Name"/>
+            <Label Text="Subject Name"/>
+            <Entry Text="{Binding SubjectDetail.SubjectName}" Placeholder="Subject Name"/>
             <BoxView HeightRequest="0.8" Color="Gray"/>
         </VerticalStackLayout>
 
         <VerticalStackLayout>
-            <Label Text="Last Name"/>
-            <Entry Text="{Binding SubjectDetail.Time}" Placeholder="Last Name"/>
+            <Label Text="Time"/>
+            <Entry Text="{Binding SubjectDetail.Time}" Placeholder="Time"/>
             <BoxView HeightRequest="0.8" Color="Gray"/>
         </VerticalStackLayout>
 

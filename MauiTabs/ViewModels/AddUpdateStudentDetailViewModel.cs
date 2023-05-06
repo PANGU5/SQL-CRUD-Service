@@ -57,7 +57,7 @@ namespace MauiTabs.ViewModels
                 StudentId = StudentDetail.StudentId,
                 FirstName = StudentDetail.FirstName,
                 LastName = StudentDetail.LastName,
-                Age = StudentDetail.Age,
+                Group = StudentDetail.Group,
             });
             
             if(response > 0)

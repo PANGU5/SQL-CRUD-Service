@@ -32,8 +32,8 @@
         </VerticalStackLayout>
 
         <VerticalStackLayout>
-            <Label Text="Age"/>
-            <Entry Text="{Binding StudentDetail.Age}" Placeholder="Age"/>
+            <Label Text="Group"/>
+            <Entry Text="{Binding StudentDetail.Group}" Placeholder="Group"/>
             <BoxView HeightRequest="0.8" Color="Gray"/>
         </VerticalStackLayout>
 

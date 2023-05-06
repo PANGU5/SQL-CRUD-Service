@@ -22,7 +22,7 @@
                                 <Label Text="{Binding FirstName}" FontSize="18" FontAttributes="Bold"/>
                                 <Label Text="{Binding LastName}" FontSize="18" FontAttributes="Bold"/>
                             </HorizontalStackLayout>
-                            <Label Text="{Binding Age}"/>
+                            <Label Text="{Binding Group}"/>
                         </StackLayout>
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentListPageViewModel}},Path=DisplayActionCommand}" 
